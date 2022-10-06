@@ -55,7 +55,6 @@ with st.sidebar:
     #predictions = np.round(model.predict_proba(df0.loc[df2["SK_ID_CURR"]==idc].values)[0][0],decimals=2)
     #resultat=requests.post(url='http://127.0.0.1:5000/predict',data={'SK_ID_CURR':idc}).json()
     #print('resultat=',resultat)
-    #predictions=requests.post(url='http://127.0.0.1:5000/predict',data={'SK_ID_CURR':idc}).json()
     predictions=requests.post(url='https://appp7fd.herokuapp.com/predict',data={'SK_ID_CURR':idc}).json()
     print('predictions=',predictions)
     
@@ -101,7 +100,7 @@ def risk_proba():
     #print('df1values',df1xl["SK_ID_CURR"].values)
     for i,idclient in enumerate(df1xl["SK_ID_CURR"].values):
         #print("i=",i,idclient)
-        predictionsxli=requests.post(url='http://127.0.0.1:5000/predict',data={'SK_ID_CURR':idclient}).json()  
+        predictionsxli=requests.post(url='https://appp7fd.herokuapp.com/predict',data={'SK_ID_CURR':idclient}).json()  
         predictionsxl[i]=predictionsxli['prediction']
         #mute=predictionsxl[i][0]
         #print('predictionsxli=',predictionsxl[i][0])
