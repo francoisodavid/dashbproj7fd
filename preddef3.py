@@ -31,21 +31,11 @@ df2xl = df1xl.drop(['TARGET','SK_ID_CURR','PRED','PREDproba','cluster'],axis=1, 
 print('df2',df2.shape,df2.columns)
 print('df2xl',df2xl.shape,df2xl.columns)
 
-# #data_load_state.text("Done! (using st.cache)")
-# df2=df1.copy()
-# df2xl=df1xl.copy()
-# #print(df2)
-
-#☺with open(f'model/model_lgb_clf_light.sav', 'rb') as f:
-#    model = load('model/model_lgb_clf_light.sav')
-
   
 if st.checkbox('Show sample data'):
     st.subheader('Raw data')
     st.write(df2.sample(5))
 
-#df0=df2.drop(['PRED','PREDproba','cluster','TARGET','SK_ID_CURR'],axis=1, inplace=False)
-#df0xl=df2xl.drop(['PRED','PREDproba','cluster','TARGET','SK_ID_CURR'],axis=1, inplace=False)
 
 with st.sidebar:
     idc = st.selectbox('IDClient:',df1xl["SK_ID_CURR"].values)
@@ -99,24 +89,13 @@ def risk_proba():
     #print("essai:",predictionsxl.shape)
     #print('df1values',df1xl["SK_ID_CURR"].values)
     for i,idclient in enumerate(df1xl["SK_ID_CURR"].values):
-        print("i=",i,idclient)
+        print("i=",i)#,idclient)
         predictionsxli=requests.post(url='https://appp7fd.herokuapp.com/predict',data={'SK_ID_CURR':idclient}).json()  
         predictionsxl[i]=predictionsxli['prediction']
-        #mute=predictionsxl[i][0]
-        #print('predictionsxli=',predictionsxl[i][0])
-        #print('predictionsxli=',predictionsxli['prediction'])#["predictions"])
     return predictionsxl
-#     #     ppredictionsxl = model.predict_proba(df2xl.drop(['PRED','PREDproba','cluster','TARGET','SK_ID_CURR'],axis=1, inplace=False))
-#     #     return ppredictionsxl
-#     idc = st.selectbox('IDClient:',df1["SK_ID_CURR"].values)
-#     print(idc)
-#     print(df2.loc[df1["SK_ID_CURR"]==idc].shape)
-#     print(df2.columns)
-#     #predictions = np.round(model.predict_proba(df0.loc[df2["SK_ID_CURR"]==idc].values)[0][0],decimals=2)
-#print('toto')
+
 predictionsxl=risk_proba()
-# print('shape',ppredictionsxl.shape)
-#print("tre",predictionsxl)
+print('ho')
 df3=df2.copy()
 df3xl=df2xl.copy()
 # #print(ppredictions[0:5,0])
