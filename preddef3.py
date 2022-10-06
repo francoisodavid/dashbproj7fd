@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import plotly
+#import plotly
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from joblib import load#,dump
+#from joblib import load#,dump
 #import shap  
 import requests
 from PIL import Image
@@ -169,9 +169,6 @@ col1, col2= st.columns(2)
 with col1:
     image = Image.open('static/images/imageshap.png')
     st.image(image, caption='Importance of factors globally', width=400)
-# with col2:
-#     image = Image.open('static/images/lime_'+str(idc)+'.png')
-#     st.image(image, caption='Importance of factors in that case', width=400)
 
 # Build figure
 fig10=make_subplots(rows=1, cols=1, subplot_titles=("Factor interaction", Feature1, Feature2))
