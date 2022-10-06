@@ -50,7 +50,7 @@ with st.sidebar:
     
     print('prediction=',predictions)
     st.subheader('Index de risque - Prediction')
-    st.write(predictions)
+    st.write(predictions['prediction'])
     
     Age=np.round(df2xl.loc[df1xl["SK_ID_CURR"]==idc,'DAYS_BIRTH'].values[0]/-365,decimals=0)
     st.write("Age:",Age,' ans')
@@ -170,6 +170,7 @@ with col1:
     image = Image.open('static/images/imageshap.png')
     st.image(image, caption='Importance of factors globally', width=400)
 with col2:
+    print(idc)
     image = Image.open('static/images/lime_'+str(idc)+'.png')
     st.image(image, caption='Importance of factors in that case', width=400)
 
