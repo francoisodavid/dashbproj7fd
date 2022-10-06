@@ -100,7 +100,7 @@ def risk_proba():
     #print('df1values',df1xl["SK_ID_CURR"].values)
     for i,idclient in enumerate(df1xl["SK_ID_CURR"].values):
         print("i=",i,idclient)
-        predictionsxli=0.#requests.post(url='https://appp7fd.herokuapp.com/predict',data={'SK_ID_CURR':idclient}).json()  
+        predictionsxli=requests.post(url='https://appp7fd.herokuapp.com/predict',data={'SK_ID_CURR':idclient}).json()  
         predictionsxl[i]=predictionsxli['prediction']
         #mute=predictionsxl[i][0]
         #print('predictionsxli=',predictionsxl[i][0])
