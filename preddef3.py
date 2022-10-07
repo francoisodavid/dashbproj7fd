@@ -55,7 +55,7 @@ with st.sidebar:
         st.markdown(f'<p style="background-color:#0066cc;color:#33ff33;font-size:24px;border-radius:2%;">{"SOLVABLE"}</p>', unsafe_allow_html=True)
         st.write("Solvable")
     else:
-        st.markdown(f'<p style="background-color:#860111;color:#000000;font-size:24px;border-radius:2%;">{"SOLVABLE"}</p>', unsafe_allow_html=True)
+        st.markdown(f'<p style="background-color:#860111;color:#111111;font-size:24px;border-radius:2%;">{"NON SOLVABLE"}</p>', unsafe_allow_html=True)
     
     Age=np.round(df2xl.loc[df1xl["SK_ID_CURR"]==idc,'DAYS_BIRTH'].values[0]/-365,decimals=0)
     st.write("Age:",Age,' ans')
