@@ -104,7 +104,7 @@ df3xl=df2xl.copy()
 print('df3xl',df3xl.shape,predictionsxl[:,0].shape)
 # #print('df3',df3.shape,ppredictions[:,0].shape)
 # #df3["proba"]=ppredictions[:,0]
-df3xl["proba"]=predictionsxl[:,0]
+df3xl["proba"]=predictionsxl[:,0].values
 
 if st.checkbox('Données client'):
     st.subheader('indices principaux')
