@@ -81,8 +81,8 @@ if st.checkbox('Filtre par groupes clients'):
     #df3=df2.copy()
     #df3xl=df1xl.copy()
     #df1xl2print = df1xl.style.highlight_null(props="color: transparent;")  # hide NaNs
-    df1xl.sample(3)
-    #st.write(df1xl.sample(3))
+    #♠df1xl.sample(3)
+    st.write(df1xl.sample(3))
 
 # on calcule une fois seulement la proba de risque de defaut
 @st.cache 
@@ -175,7 +175,7 @@ with col1:
 with col2:
     print(idc)
     image = Image.open('static/images/lime_'+str(idc)+'.png')
-    st.image(image, caption='Importance of factors in that case', width=800)
+    st.image(image, caption='Importance of factors in that case', width=600)
 
 # Build figure
 fig10=make_subplots(rows=1, cols=1, subplot_titles=("Factor interaction", Feature1, Feature2))
