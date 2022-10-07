@@ -52,11 +52,9 @@ with st.sidebar:
     st.subheader('Index de risque - Prediction')
     st.write(predictions['prediction'])
     if predictions['prediction']>0.5:
-        st.markdown(f'<p style="background-color:#0066cc;color:#33ff33;font-size:24px;border-radius:2%;">{"SOLVABLE"}</p>')
+        st.markdown(f'<p style="background-color:#0066cc;color:#33ff33;font-size:24px;border-radius:2%;">{"SOLVABLE"}</p>', unsafe_allow_html=True)
         st.write("Solvable")
     else:
-        st.markdown(f'<p style="background-color:#86011;color:#000000;font-size:24px;border-radius:2%;">{"NON SOLVABLE"}</p>')
-
         st.write("Non solvable")
     
     Age=np.round(df2xl.loc[df1xl["SK_ID_CURR"]==idc,'DAYS_BIRTH'].values[0]/-365,decimals=0)
