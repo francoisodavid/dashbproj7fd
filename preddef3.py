@@ -77,12 +77,15 @@ print(df1xl.loc[df1xl["SK_ID_CURR"]==idc,"cluster"].values[0])
 if st.checkbox('Filtre par groupes clients'):
     clu=df1xl.loc[df1xl["SK_ID_CURR"]==idc,"cluster"].values[0]
     df1xl=df1xl.loc[df1xl.cluster==clu] #je choisis une valeur par défaut
+    df3=df2.copy()
+    df3xl=df1xl.copy()
+    st.write(df3xl.sample(2))
     #df1xl2print=df1xl.copy()
     #df3=df2.copy()
     #df3xl=df1xl.copy()
     #df1xl2print = df1xl.style.highlight_null(props="color: transparent;")  # hide NaNs
     #♠df1xl.sample(3)
-    st.write(df1xl.sample(3))
+    #st.write(df1xl.sample(3))
 
 # on calcule une fois seulement la proba de risque de defaut
 @st.cache 
