@@ -107,7 +107,7 @@ print('ho')
 df3=df2.copy()
 df3xl=df2xl.copy()
 # #print(ppredictions[0:5,0])
-#print('df3xl',df3xl.shape,predictionsxl[:,0].shape)
+print('df3xl',df3xl.shape,predictionsxl[:,0].shape)
 # #print('df3',df3.shape,ppredictions[:,0].shape)
 # #df3["proba"]=ppredictions[:,0]
 df3xl["proba"]=predictionsxl[:,0]
