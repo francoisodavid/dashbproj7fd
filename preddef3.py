@@ -77,9 +77,10 @@ print(df1xl.loc[df1xl["SK_ID_CURR"]==idc,"cluster"].values[0])
 if st.checkbox('Filtre par groupes clients'):
     clu=df1xl.loc[df1xl["SK_ID_CURR"]==idc,"cluster"].values[0]
     df1xl=df1xl.loc[df1xl.cluster==clu] #je choisis une valeur par défaut
-    df3=df2.copy()
-    df3xl=df1xl.copy()
-    st.write(df3xl.sample(2))
+    #df3=df2.copy()
+    #df3xl=df1xl.copy()
+    df1xl = df1xl.style.highlight_null(props="color: transparent;")  # hide NaNs
+    st.write(df1xl.sample(3))
 
 # on calcule une fois seulement la proba de risque de defaut
 @st.cache 
@@ -172,7 +173,7 @@ with col1:
 with col2:
     print(idc)
     image = Image.open('static/images/lime_'+str(idc)+'.png')
-    st.image(image, caption='Importance of factors in that case', width=400)
+    st.image(image, caption='Importance of factors in that case', width=800)
 
 # Build figure
 fig10=make_subplots(rows=1, cols=1, subplot_titles=("Factor interaction", Feature1, Feature2))
@@ -187,12 +188,11 @@ fig10.add_trace(
         name="low risk",
         marker=dict(
         color='LightSkyBlue',
-        size=2,
+        size=5,
         line=dict(
             color='MediumPurple',
             width=0
             ),
-        
         ),legendgroup = '1',
         showlegend=True
         ),
@@ -206,7 +206,7 @@ fig10.add_trace(
         name="high risk",
         marker=dict(
         color='crimson',
-        size=0,
+        size=5,
         line=dict(
             color='MediumPurple',
             width=1
