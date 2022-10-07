@@ -76,10 +76,10 @@ with st.sidebar:
 print(df1xl.loc[df1xl["SK_ID_CURR"]==idc,"cluster"].values[0])
 if st.checkbox('Filtre par groupes clients'):
     clu=df1xl.loc[df1xl["SK_ID_CURR"]==idc,"cluster"].values[0]
-    df1xl=df1xl.loc[df1xl.cluster==clu] #je choisis une valeur par défaut
+    df4xl=df1xl.loc[df1xl.cluster==clu] #je choisis une valeur par défaut
     df3=df2.copy()
     df3xl=df1xl.copy()
-    st.write(df3xl.sample(2))
+    st.write(df4xl.sample(2))
 
 # on calcule une fois seulement la proba de risque de defaut
 @st.cache 
@@ -95,7 +95,6 @@ def risk_proba():
     return predictionsxl
 
 predictionsxl=risk_proba()
-#df3xl=risk_proba()
 
 print('ho')
 df3=df2.copy()
@@ -104,7 +103,7 @@ df3xl=df2xl.copy()
 print('df3xl',df3xl.shape,predictionsxl[:,0].shape)
 # #print('df3',df3.shape,ppredictions[:,0].shape)
 # #df3["proba"]=ppredictions[:,0]
-df3xl["proba"]=predictionsxl[:,0].values
+df3xl["proba"]=predictionsxl[:,0]
 
 if st.checkbox('Données client'):
     st.subheader('indices principaux')
