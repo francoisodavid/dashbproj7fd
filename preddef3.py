@@ -98,16 +98,18 @@ def risk_proba():
         print("i=",i)#,idclient)
         predictionsxli=requests.post(url='https://appp7fd.herokuapp.com/predict',data={'SK_ID_CURR':idclient}).json()  
         predictionsxl[i]=predictionsxli['prediction']
-    return predictionsxl
+    df3xl["proba"]=predictionsxl[:,0]
+    return df3xl #predictionsxl
 
-predictionsxl=risk_proba()
+#predictionsxl=risk_proba()
+df3xl=risk_proba()
+
 print('ho')
-df3=df2.copy()
-df3xl=df2xl.copy()
+#df3=df2.copy()
+#df3xl=df2xl.copy()
 # #print(ppredictions[0:5,0])
-print('df3xl',df3xl.shape,predictionsxl[:,0].shape)
+#print('df3xl',df3xl.shape,predictionsxl[:,0].shape)
 # #print('df3',df3.shape,ppredictions[:,0].shape)
-df3xl["proba"]=predictionsxl[:,0]
 # #df3["proba"]=ppredictions[:,0]
 
 if st.checkbox('Données client'):
