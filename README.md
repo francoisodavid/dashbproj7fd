@@ -1,22 +1,26 @@
-# Prediction-Using-LGB model-streamlit-Web-Application
-The appli evaluates a risk index for credit.
+# API de scoring
 
-<h2>Dependencies for running the web app</h2>
+# Project
+Projet 7 OpenClassRooms
 
-<li>
-<ol>joblib==1.0.1</ol>
-<ol>numpy==1.22.0</ol>
-<ol>pandas==1.2.4</ol>
-<ol>plotly==5.6.0</ol>
-<ol>requests==2.25.1</ol>
-<ol>streamlit==1.10.0</ol>
-<ol>lightgbm==3.3.2</ol>
-</li>
+# Data 
+Sourced from: https://www.kaggle.com/c/home-credit-default-risk/data
+
+# Objectifs
+Présente une évaluation client individualisée sous forme d'un Dashboard
+
+# Partie interactive
+Choisir un numéro de client dans le panel de gauche
+Appel à l'API de calcul de score
+Représentation du score client ligne verticale, point sur les valeurs de population des autres clients
 
 
-<h2>Project Folder Structure</h2>
+# Characteristics
+- Using Streamlit et https://share.streamlit.io/
+- Build for 2 version of dataframe smal or large (XL), not used at the moment
 
-<img src="static/images/printscreen.png">
+# Deployed on Heroku at :
+https://francoisodavid-dashbproj7fd-preddef3-fytbq3.streamlitapp.com/
 
-<p>To run the app navigate to https://francoisodavid-applambda-preddef-fdbdlx.streamlitapp.com/</p>
+
 
