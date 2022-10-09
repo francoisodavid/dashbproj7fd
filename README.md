@@ -1,4 +1,4 @@
-# API de scoring
+# DASHBOARD de scoring client
 
 # Project
 Projet 7 OpenClassRooms
@@ -11,7 +11,7 @@ Présente une évaluation client individualisée sous forme d'un Dashboard
 
 # Partie interactive
 Choisir un numéro de client dans le panel de gauche
-Appel à l'API de calcul de score
+Appel à l'API de calcul de score développée sur Flask
 Représentation du score client ligne verticale, point sur les valeurs de population des autres clients
 
 
