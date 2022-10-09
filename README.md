@@ -19,7 +19,7 @@ Représentation du score client ligne verticale, point sur les valeurs de popula
 - Using Streamlit et https://share.streamlit.io/
 - Build for 2 version of dataframe smal or large (XL), not used at the moment
 
-# Deployed on Heroku at :
+# Deployed on sharestreamlit at :
 https://francoisodavid-dashbproj7fd-preddef3-fytbq3.streamlitapp.com/
 
 
